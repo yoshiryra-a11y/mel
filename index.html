@@ -3,333 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>For Lina ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-
-font-family:'Poppins',sans-serif;
-overflow:hidden;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:linear-gradient(-45deg,
-#ff8fb1,
-#ffb6c1,
-#d8b4ff,
-#90cdf4);
-
-background-size:400% 400%;
-animation:bgMove 15s ease infinite;
-
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(-45deg, #ff8fb1, #ffb6c1, #d8b4ff, #90cdf4);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+  position: relative;
 }
 
-@keyframes bgMove{
-
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-#stars{
-
-position:fixed;
-width:100%;
-height:100%;
-overflow:hidden;
-pointer-events:none;
-
+#stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.star{
-
-position:absolute;
-background:white;
-border-radius:50%;
-opacity:.7;
-animation:twinkle 2s infinite;
-
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 2s infinite;
 }
 
-@keyframes twinkle{
-
-0%,100%{
-opacity:.2;
-transform:scale(.7);
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
 }
 
-50%{
-opacity:1;
-transform:scale(1.3);
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
+.heart {
+  position: absolute;
+  bottom: -40px;
+  font-size: 20px;
+  animation: floatUp linear forwards;
 }
 
-#hearts{
-
-position:fixed;
-inset:0;
-pointer-events:none;
-overflow:hidden;
-
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1.5);
+    opacity: 0;
+  }
 }
 
-.heart{
-
-position:absolute;
-bottom:-40px;
-font-size:20px;
-animation:floatUp linear forwards;
-
+.card {
+  width: 90%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(18px);
+  border-radius: 30px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 5;
+  position: relative;
 }
 
-@keyframes floatUp{
-
-0%{
-
-transform:translateY(0) scale(.7);
-opacity:0;
-
+.card img {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-15%{
-
-opacity:1;
-
+h1 {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 10px;
 }
 
-100%{
-
-transform:translateY(-110vh) rotate(360deg) scale(1.5);
-opacity:0;
-
+.subtitle {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 25px;
 }
 
+#letter {
+  font-size: 20px;
+  color: white;
+  line-height: 1.8;
+  min-height: 170px;
+  margin-bottom: 25px;
 }
 
-.card{
-
-width:90%;
-max-width:650px;
-
-background:rgba(255,255,255,.20);
-
-backdrop-filter:blur(18px);
-
-border-radius:30px;
-
-padding:40px;
-
-text-align:center;
-
-box-shadow:0 20px 50px rgba(0,0,0,.25);
-
-border:1px solid rgba(255,255,255,.4);
-
-z-index:5;
-
+button {
+  padding: 14px 32px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+  font-weight: bold;
 }
 
-.card img{
-
-width:220px;
-max-width:100%;
-border-radius:20px;
-margin-bottom:20px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-
+#start {
+  background: #ffffff;
+  color: #ff4f8b;
 }
 
-h1{
-
-font-size:48px;
-color:white;
-margin-bottom:10px;
-
+#start:hover {
+  transform: scale(1.08);
 }
 
-.subtitle{
-
-font-size:22px;
-color:white;
-margin-bottom:25px;
-
+#question {
+  display: none;
 }
 
-#letter{
-
-font-size:20px;
-color:white;
-line-height:1.8;
-
-min-height:170px;
-
-margin-bottom:25px;
-
+#yes {
+  background: #3ecf6d;
+  color: white;
+  box-shadow: 0 0 20px #3ecf6d;
 }
 
-button{
-
-padding:14px 32px;
-
-font-size:20px;
-
-border:none;
-
-border-radius:15px;
-
-cursor:pointer;
-
-transition:.3s;
-
-margin:10px;
-
-font-weight:bold;
-
+#yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #3ecf6d;
 }
 
-#start{
-
-background:#ffffff;
-color:#ff4f8b;
-
+#no {
+  background: #ff5b7f;
+  color: white;
+  position: relative;
 }
 
-#start:hover{
-
-transform:scale(1.08);
-
+#message {
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  min-height: 60px;
 }
 
-#question{
-
-display:none;
-
+canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
 }
 
-#yes{
-
-background:#3ecf6d;
-color:white;
-
-box-shadow:0 0 20px #3ecf6d;
-
+@media(max-width: 700px) {
+  h1 { font-size: 34px; }
+  .subtitle { font-size: 18px; }
+  #letter { font-size: 18px; }
+  button { font-size: 18px; padding: 12px 24px; }
 }
 
-#yes:hover{
-
-transform:scale(1.1);
-
-box-shadow:0 0 40px #3ecf6d;
-
+@keyframes confettiFall {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
 }
 
-#no{
-
-background:#ff5b7f;
-color:white;
-
-position:relative;
-
+@keyframes petalFall {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
 }
 
-#message{
-
-margin-top:30px;
-
-font-size:26px;
-
-font-weight:bold;
-
-color:white;
-
-min-height:60px;
-
-}
-
-canvas{
-
-position:fixed;
-
-left:0;
-top:0;
-
-pointer-events:none;
-
-}
-
-@media(max-width:700px){
-
-h1{
-
-font-size:34px;
-
-}
-
-.subtitle{
-
-font-size:18px;
-
-}
-
-#letter{
-
-font-size:18px;
-
-}
-
-button{
-
-font-size:18px;
-padding:12px 24px;
-
-}
-
-}
-@keyframes confettiFall{
-
-from{
-transform:translateY(0) rotate(0deg);
-opacity:1;
-}
-
-to{
-transform:translateY(110vh) rotate(720deg);
-opacity:0;
-}
-
-}
-
-
-@keyframes petalFall{
-
-from{
-transform:translateY(0) rotate(0deg);
-}
-
-to{
-transform:translateY(110vh) rotate(360deg);
-}
-
-}
 </style>
-
 </head>
-
 <body>
 
 <div id="stars"></div>
@@ -338,52 +222,23 @@ transform:translateY(110vh) rotate(360deg);
 <canvas id="fireworks"></canvas>
 
 <div class="card">
-
-<!-- Replace this with your own image if you like -->
-<img src="https://via.placeholder.com/220x220?text=Special+Image" alt="Special image">
-
-<h1>Hi Lina ❤️</h1>
-
-<div class="subtitle">
-
-I've been wanting to ask you something...
-
-</div>
-
-<div id="letter">
-
-</div>
-
-<button id="start">
-
-💌 Open My Letter
-
-</button>
-
-<div id="question">
-
-<h2 style="color:white;margin-bottom:20px;">
-
-Will you be my girlfriend? ❤️
-
-</h2>
-
-<button id="yes">
-
-Yes ❤️
-
-</button>
-
-<button id="no">
-
-No 😅
-
-</button>
-
-</div>
-
-<div id="message"></div>
-
+  <img src="https://via.placeholder.com/220x220?text=Special+Image" alt="Special image">
+  
+  <h1>Hi Lina ❤️</h1>
+  
+  <div class="subtitle">I've been wanting to ask you something...</div>
+  
+  <div id="letter"></div>
+  
+  <button id="start">💌 Open My Letter</button>
+  
+  <div id="question">
+    <h2 style="color:white;margin-bottom:20px;">Will you be my girlfriend? ❤️</h2>
+    <button id="yes">Yes ❤️</button>
+    <button id="no">No 😅</button>
+  </div>
+  
+  <div id="message"></div>
 </div>
 
 <script>
@@ -395,8 +250,7 @@ const yesButton = document.getElementById("yes");
 const noButton = document.getElementById("no");
 const message = document.getElementById("message");
 
-const loveText = 
-`Lina ❤️
+const loveText = `Lina ❤️
 
 Every time I talk to you, you make my day brighter.
 
@@ -409,151 +263,85 @@ So I have one very important question...
 
 let index = 0;
 
-
-// Typewriter effect
 function typeLetter(){
-
-    if(index < loveText.length){
-
-        letter.innerHTML += loveText.charAt(index);
-
-        index++;
-
-        setTimeout(typeLetter,45);
-
-    }
-
+  if(index < loveText.length){
+    letter.innerHTML += loveText.charAt(index);
+    index++;
+    setTimeout(typeLetter, 45);
+  }
 }
-
 
 // Create stars
 const stars = document.getElementById("stars");
 
 for(let i = 0; i < 120; i++){
-
-    let star = document.createElement("div");
-
-    star.className = "star";
-
-    let size = Math.random()*4+1;
-
-    star.style.width=size+"px";
-    star.style.height=size+"px";
-
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
-
-    star.style.animationDelay=Math.random()*3+"s";
-
-    stars.appendChild(star);
-
+  let star = document.createElement("div");
+  star.className = "star";
+  let size = Math.random() * 4 + 1;
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.animationDelay = Math.random() * 3 + "s";
+  stars.appendChild(star);
 }
-
 
 // Floating hearts
 function createHeart(){
-
-    let heart=document.createElement("div");
-
-    heart.className="heart";
-
-    const hearts=["❤️","💗","💕","💖","💜"];
-
-    heart.innerHTML=
-    hearts[Math.floor(Math.random()*hearts.length)];
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.fontSize=
-    (15+Math.random()*30)+"px";
-
-    heart.style.animationDuration=
-    (4+Math.random()*5)+"s";
-
-    document
-    .getElementById("hearts")
-    .appendChild(heart);
-
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },9000);
-
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  const hearts = ["❤️", "💗", "💕", "💖", "💜"];
+  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 30) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+  document.getElementById("hearts").appendChild(heart);
+  
+  setTimeout(() => {
+    heart.remove();
+  }, 9000);
 }
 
-
-setInterval(createHeart,400);
-
+setInterval(createHeart, 400);
 
 // Open letter
-startButton.addEventListener("click",()=>{
-
-    startButton.style.display="none";
-
-    typeLetter();
-
-    setTimeout(()=>{
-
-        question.style.display="block";
-
-    },loveText.length*45+500);
-
-
+startButton.addEventListener("click", () => {
+  startButton.style.display = "none";
+  typeLetter();
+  setTimeout(() => {
+    question.style.display = "block";
+  }, loveText.length * 45 + 500);
 });
-
 
 // Funny escaping No button
-let noCount=0;
+let noCount = 0;
 
-noButton.addEventListener("mouseover",()=>{
+noButton.addEventListener("mouseover", () => {
+  noCount++;
+  noButton.style.position = "fixed";
+  noButton.style.left = Math.random() * (window.innerWidth - 120) + "px";
+  noButton.style.top = Math.random() * (window.innerHeight - 60) + "px";
 
-    noCount++;
+  const messages = [
+    "No 😅",
+    "Are you sure? 🤔",
+    "Try again 😂",
+    "The Yes button is nicer ❤️",
+    "Nice try Lina 😜"
+  ];
 
-    noButton.style.position="fixed";
-
-    noButton.style.left=
-    Math.random()*(window.innerWidth-120)+"px";
-
-    noButton.style.top=
-    Math.random()*(window.innerHeight-60)+"px";
-
-
-    const messages=[
-
-        "No 😅",
-
-        "Are you sure? 🤔",
-
-        "Try again 😂",
-
-        "The Yes button is nicer ❤️",
-
-        "Nice try Lina 😜"
-
-    ];
-
-    noButton.innerHTML=
-    messages[Math.min(noCount, messages.length-1)];
-
+  noButton.innerHTML = messages[Math.min(noCount, messages.length - 1)];
 });
 
-
 // YES button
-yesButton.addEventListener("click",()=>{
-
-    question.style.display="none";
-
-    message.innerHTML=
-    "❤️ SHE SAID YES ❤️<br><br>Preparing a surprise... 🎆";
-
-    startFireworks();
-
+yesButton.addEventListener("click", () => {
+  question.style.display = "none";
+  message.innerHTML = "❤️ SHE SAID YES ❤️<br><br>Preparing a surprise... 🎆";
+  startFireworks();
 });
 
 // ===============================
-// PART 3 - FIREWORKS + CONFETTI
+// FIREWORKS + CONFETTI
 // ===============================
 
 const canvas = document.getElementById("fireworks");
@@ -562,405 +350,187 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
-window.addEventListener("resize",()=>{
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 
+let particles = [];
 
-let particles=[];
+class FireworkParticle {
+  constructor(x, y, color){
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.size = Math.random() * 4 + 2;
+    this.speedX = (Math.random() - 0.5) * 10;
+    this.speedY = (Math.random() - 0.5) * 10;
+    this.gravity = 0.05;
+    this.alpha = 1;
+  }
 
+  update(){
+    this.x += this.speedX;
+    this.y += this.speedY;
+    this.speedY += this.gravity;
+    this.alpha -= 0.015;
+  }
 
-class FireworkParticle{
-
-    constructor(x,y,color){
-
-        this.x=x;
-        this.y=y;
-
-        this.color=color;
-
-        this.size=Math.random()*4+2;
-
-        this.speedX=(Math.random()-0.5)*10;
-        this.speedY=(Math.random()-0.5)*10;
-
-        this.gravity=0.05;
-
-        this.alpha=1;
-
-    }
-
-
-    update(){
-
-        this.x+=this.speedX;
-
-        this.y+=this.speedY;
-
-        this.speedY+=this.gravity;
-
-        this.alpha-=0.015;
-
-    }
-
-
-    draw(){
-
-        ctx.save();
-
-        ctx.globalAlpha=this.alpha;
-
-        ctx.beginPath();
-
-        ctx.arc(
-            this.x,
-            this.y,
-            this.size,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fillStyle=this.color;
-
-        ctx.fill();
-
-        ctx.restore();
-
-    }
-
+  draw(){
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.restore();
+  }
 }
-
-
 
 function createExplosion(){
+  let x = Math.random() * canvas.width;
+  let y = Math.random() * (canvas.height * 0.55);
 
-    let x=Math.random()*canvas.width;
+  let colors = ["#ff4d6d", "#ffd700", "#00e5ff", "#ffffff", "#c77dff", "#7cff00"];
+  let color = colors[Math.floor(Math.random() * colors.length)];
 
-    let y=Math.random()*(canvas.height*0.55);
-
-
-    let colors=[
-
-        "#ff4d6d",
-        "#ffd700",
-        "#00e5ff",
-        "#ffffff",
-        "#c77dff",
-        "#7cff00"
-
-    ];
-
-
-    let color=
-    colors[Math.floor(Math.random()*colors.length)];
-
-
-    for(let i=0;i<120;i++){
-
-        particles.push(
-            new FireworkParticle(
-                x,
-                y,
-                color
-            )
-        );
-
-    }
-
+  for(let i = 0; i < 120; i++){
+    particles.push(new FireworkParticle(x, y, color));
+  }
 }
-
-
 
 function animateFireworks(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+  for(let i = particles.length - 1; i >= 0; i--){
+    particles[i].update();
+    particles[i].draw();
 
-
-    for(let i=particles.length-1;i>=0;i--){
-
-        particles[i].update();
-
-        particles[i].draw();
-
-
-        if(particles[i].alpha<=0){
-
-            particles.splice(i,1);
-
-        }
-
+    if(particles[i].alpha <= 0){
+      particles.splice(i, 1);
     }
+  }
 
-
-    requestAnimationFrame(animateFireworks);
-
+  requestAnimationFrame(animateFireworks);
 }
-
 
 animateFireworks();
 
-
-
 function startFireworks(){
+  document.body.style.background = "linear-gradient(135deg, #141e30, #243b55)";
+  createExplosion();
 
-    document.body.style.background=
-    "linear-gradient(135deg,#141e30,#243b55)";
-
-
+  let fireworks = setInterval(() => {
     createExplosion();
+  }, 800);
 
-
-    let fireworks=setInterval(()=>{
-
-        createExplosion();
-
-    },800);
-
-
-
-    setTimeout(()=>{
-
-        clearInterval(fireworks);
-
-        finalMessage();
-
-    },8000);
-
+  setTimeout(() => {
+    clearInterval(fireworks);
+    finalMessage();
+  }, 8000);
 }
 
-
-
-// ===============================
 // CONFETTI
-// ===============================
-
-
 function createConfetti(){
+  let confetti = document.createElement("div");
+  confetti.innerHTML = "✨";
+  confetti.style.position = "fixed";
+  confetti.style.top = "-20px";
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.fontSize = (15 + Math.random() * 25) + "px";
+  confetti.style.animation = "confettiFall 4s linear forwards";
+  document.body.appendChild(confetti);
 
-    let confetti=document.createElement("div");
-
-
-    confetti.innerHTML="✨";
-
-
-    confetti.style.position="fixed";
-
-    confetti.style.top="-20px";
-
-    confetti.style.left=
-    Math.random()*100+"vw";
-
-
-    confetti.style.fontSize=
-    (15+Math.random()*25)+"px";
-
-
-    confetti.style.animation=
-    "confettiFall 4s linear forwards";
-
-
-    document.body.appendChild(confetti);
-
-
-    setTimeout(()=>{
-
-        confetti.remove();
-
-    },4000);
-
+  setTimeout(() => {
+    confetti.remove();
+  }, 4000);
 }
 
+setInterval(createConfetti, 150);
 
-setInterval(createConfetti,150);
-
-
-
-// ===============================
 // ROSE PETALS
-// ===============================
-
-
 function createPetal(){
+  let petal = document.createElement("div");
+  petal.innerHTML = "🌹";
+  petal.style.position = "fixed";
+  petal.style.top = "-40px";
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.fontSize = (18 + Math.random() * 20) + "px";
+  petal.style.animation = "petalFall 6s linear forwards";
+  document.body.appendChild(petal);
 
-    let petal=document.createElement("div");
-
-
-    petal.innerHTML="🌹";
-
-
-    petal.style.position="fixed";
-
-    petal.style.top="-40px";
-
-    petal.style.left=
-    Math.random()*100+"vw";
-
-
-    petal.style.fontSize=
-    (18+Math.random()*20)+"px";
-
-
-    petal.style.animation=
-    "petalFall 6s linear forwards";
-
-
-    document.body.appendChild(petal);
-
-
-    setTimeout(()=>{
-
-        petal.remove();
-
-    },6000);
-
+  setTimeout(() => {
+    petal.remove();
+  }, 6000);
 }
 
+setInterval(createPetal, 600);
 
-setInterval(createPetal,600);
-
-
-
-// ===============================
 // FINAL SCREEN
-// ===============================
-
-
 function finalMessage(){
-
-    message.innerHTML=
-
-    `
+  message.innerHTML = `
     ❤️ SHE SAID YES ❤️
     <br><br>
-
     Lina, thank you for making me so happy.
-
     <br><br>
-
     I can't wait to make more memories,
     share more laughs,
     and keep making you smile.
-
     <br><br>
-
     Forever grateful for you ❤️
-    `;
-
-
-    message.style.fontSize="24px";
-
+  `;
+  message.style.fontSize = "24px";
 }
 
-// ===============================
-// PART 4 - EASTER EGGS + POLISH
-// ===============================
-
-
-// Secret keyboard surprises ❤️
-
+// EASTER EGGS
 let secretCode = "";
 
-document.addEventListener("keydown",(event)=>{
+document.addEventListener("keydown", (event) => {
+  secretCode += event.key.toLowerCase();
 
-    secretCode += event.key.toLowerCase();
+  if(secretCode.length > 12){
+    secretCode = secretCode.slice(-12);
+  }
 
-
-    // Keep only the last 12 letters
-    if(secretCode.length > 12){
-
-        secretCode = secretCode.slice(-12);
-
+  if(secretCode === "iloveyoulina"){
+    message.innerHTML = `
+      💖 SECRET FOUND 💖
+      <br><br>
+      Lina, you found the hidden surprise ❤️
+    `;
+    document.body.style.background = "linear-gradient(135deg, #ff758c, #ff7eb3)";
+    for(let i = 0; i < 20; i++){
+      createHeart();
     }
+  }
 
+  if(event.key.toLowerCase() === "v"){
+    createExplosion();
+    createExplosion();
+  }
 
-    // Secret message
-    if(secretCode === "iloveyoulina"){
-
-        message.innerHTML =
-        `
-        💖 SECRET FOUND 💖
-        <br><br>
-        Lina, you found the hidden surprise ❤️
-        `;
-
-
-        document.body.style.background =
-        "linear-gradient(135deg,#ff758c,#ff7eb3)";
-
-
-        for(let i=0;i<20;i++){
-
-            createHeart();
-
-        }
-
+  if(event.key.toLowerCase() === "l"){
+    for(let i = 0; i < 15; i++){
+      createHeart();
     }
-
-
-    // Press V for extra fireworks
-    if(event.key.toLowerCase()==="v"){
-
-        createExplosion();
-
-        createExplosion();
-
-    }
-
-
-    // Press L for hearts
-    if(event.key.toLowerCase()==="l"){
-
-        for(let i=0;i<15;i++){
-
-            createHeart();
-
-        }
-
-    }
-
+  }
 });
 
-
-
 // Final signature
+setTimeout(() => {
+  let footer = document.createElement("div");
+  footer.innerHTML = "Made with ❤️ just for Lina";
+  footer.style.position = "fixed";
+  footer.style.bottom = "15px";
+  footer.style.width = "100%";
+  footer.style.textAlign = "center";
+  footer.style.color = "white";
+  footer.style.fontSize = "14px";
+  footer.style.opacity = "0.8";
+  footer.style.zIndex = "10";
+  document.body.appendChild(footer);
+}, 2000);
 
-setTimeout(()=>{
-
-    let footer=document.createElement("div");
-
-    footer.innerHTML=
-    "Made with ❤️ just for Lina";
-
-    footer.style.position="fixed";
-
-    footer.style.bottom="15px";
-
-    footer.style.width="100%";
-
-    footer.style.textAlign="center";
-
-    footer.style.color="white";
-
-    footer.style.fontSize="14px";
-
-    footer.style.opacity=".8";
-
-    footer.style.zIndex="10";
-
-
-    document.body.appendChild(footer);
-
-
-},2000);
 </script>
 </body>
 </html>
