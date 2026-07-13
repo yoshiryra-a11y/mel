@@ -20,7 +20,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background: linear-gradient(-45deg, #ff6b9d, #ffa8a8, #d4a5d4, #a8d5ff);
+  background: linear-gradient(135deg, #1a0a0a, #2d0000, #1a0a0a, #3d0000);
   background-size: 400% 400%;
   animation: bgMove 15s ease infinite;
   position: relative;
@@ -42,10 +42,11 @@ body{
 
 .star {
   position: absolute;
-  background: white;
+  background: #ff4444;
   border-radius: 50%;
   opacity: 0.7;
   animation: twinkle 2s infinite;
+  box-shadow: 0 0 10px #ff6666;
 }
 
 @keyframes twinkle {
@@ -90,13 +91,13 @@ body{
 .card {
   width: 90%;
   max-width: 700px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(18px);
   border-radius: 30px;
   padding: 40px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 0, 0, 0.5);
   z-index: 5;
   position: relative;
   max-height: 90vh;
@@ -108,28 +109,31 @@ body{
   max-width: 100%;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4), 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ff4444;
 }
 
 h1 {
   font-size: 48px;
-  color: white;
+  color: #ff6666;
   margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
 }
 
 .subtitle {
   font-size: 22px;
-  color: white;
+  color: #ffaaaa;
   margin-bottom: 25px;
 }
 
 #letter {
   font-size: 18px;
-  color: white;
+  color: #ffffff;
   line-height: 1.8;
   min-height: 280px;
   margin-bottom: 25px;
   text-align: left;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
 
 button {
@@ -141,15 +145,19 @@ button {
   transition: 0.3s;
   margin: 10px;
   font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 #start {
-  background: #ffffff;
-  color: #ff6b9d;
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  border: 2px solid #ff6666;
 }
 
 #start:hover {
   transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
 }
 
 #question {
@@ -157,28 +165,35 @@ button {
 }
 
 #accept {
-  background: #ff6b9d;
+  background: linear-gradient(135deg, #ff4444, #cc0000);
   color: white;
-  box-shadow: 0 0 20px #ff6b9d;
+  box-shadow: 0 0 20px #ff4444;
+  border: 2px solid #ff6666;
 }
 
 #accept:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 40px #ff6b9d;
+  box-shadow: 0 0 40px #ff4444;
 }
 
 #maybe {
-  background: #ffa8a8;
-  color: white;
+  background: rgba(255, 68, 68, 0.3);
+  color: #ffaaaa;
   position: relative;
+  border: 2px solid #ff4444;
+}
+
+#maybe:hover {
+  background: rgba(255, 68, 68, 0.5);
 }
 
 #message {
   margin-top: 30px;
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: #ff6666;
   min-height: 60px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 canvas {
@@ -227,7 +242,7 @@ canvas {
 <canvas id="fireworks"></canvas>
 
 <div class="card">
-  <img src="m%2Bl.png" alt="I miss you">
+  <img src="https://raw.githubusercontent.com/yoshiryra-a11y/mel/main/m%2Bl.png" alt="I miss you" onerror="this.style.display='none'">
   
   <h1>I'm Sorry 💔</h1>
   
@@ -238,7 +253,7 @@ canvas {
   <button id="start">💌 Read My Message</button>
   
   <div id="question">
-    <h2 style="color:white;margin-bottom:20px;">Can you forgive me? 😔</h2>
+    <h2 style="color:#ff6666;margin-bottom:20px;text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">Can you forgive me? 😔</h2>
     <button id="accept">I Forgive You 💕</button>
     <button id="maybe">I Need Time 💭</button>
   </div>
@@ -391,7 +406,7 @@ function createExplosion(){
   let x = Math.random() * canvas.width;
   let y = Math.random() * (canvas.height * 0.55);
 
-  let colors = ["#ff6b9d", "#ffa8a8", "#d4a5d4", "#a8d5ff", "#ffffff"];
+  let colors = ["#ff4444", "#ff6666", "#cc0000", "#ff0000", "#ffffff"];
   let color = colors[Math.floor(Math.random() * colors.length)];
 
   for(let i = 0; i < 120; i++){
@@ -417,7 +432,7 @@ function animateFireworks(){
 animateFireworks();
 
 function startFireworks(){
-  document.body.style.background = "linear-gradient(135deg, #ff6b9d, #ffa8a8)";
+  document.body.style.background = "linear-gradient(135deg, #000000, #3d0000)";
   createExplosion();
 
   let fireworks = setInterval(() => {
@@ -497,7 +512,7 @@ document.addEventListener("keydown", (event) => {
       <br><br>
       I promise to be honest, kind, and true to you 💕
     `;
-    document.body.style.background = "linear-gradient(135deg, #ff6b9d, #d4a5d4)";
+    document.body.style.background = "linear-gradient(135deg, #1a0000, #3d0000)";
     for(let i = 0; i < 20; i++){
       createHeart();
     }
@@ -523,10 +538,11 @@ setTimeout(() => {
   footer.style.bottom = "15px";
   footer.style.width = "100%";
   footer.style.textAlign = "center";
-  footer.style.color = "white";
+  footer.style.color = "#ff6666";
   footer.style.fontSize = "14px";
   footer.style.opacity = "0.8";
   footer.style.zIndex = "10";
+  footer.style.textShadow = "0 0 10px rgba(255, 0, 0, 0.5)";
   document.body.appendChild(footer);
 }, 2000);
 
